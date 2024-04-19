@@ -27,9 +27,9 @@ namespace PerspectiveCameraWall.Sample1
         {
             mainCamera.transform.position = target.transform.position + offset;
 
-            if (useCameraWall && CameraWall.TryGetClosestWall(out var cameraWall))
+            if (useCameraWall)
             {
-                mainCamera.transform.Translate(cameraWall.CalculateOffset(), Space.World);
+                mainCamera.transform.Translate(CameraWall.GetTotalOffset(), Space.World);
             }
         }
 

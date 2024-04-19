@@ -23,15 +23,15 @@ namespace PerspectiveCameraWall.Sample2
             CameraWall.SetInfo(new SampleCinemachineInfo());
         }
     
-        private void Update()
-        {
-            mainCamera.transform.position = target.transform.position + offset;
-
-            if (useCameraWall && CameraWall.TryGetClosestWall(out var cameraWall))
-            {
-                mainCamera.transform.Translate(cameraWall.CalculateOffset(), Space.World);
-            }
-        }
+        // private void Update()
+        // {
+        //     mainCamera.transform.position = target.transform.position + offset;
+        //
+        //     if (useCameraWall && CameraWall.TryGetClosestWall(out var cameraWall))
+        //     {
+        //         mainCamera.transform.Translate(cameraWall.CalculateOffset(), Space.World);
+        //     }
+        // }
 
         private void OnGUI()
         {
