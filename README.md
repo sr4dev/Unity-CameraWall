@@ -1,4 +1,4 @@
-# Unity-PerspectiveCameraWall
+# Unity-CameraWall
 
 ## What is this?
 
