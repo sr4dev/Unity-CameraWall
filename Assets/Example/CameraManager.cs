@@ -1,9 +1,9 @@
 using UnityEngine;
 using PerspectiveCameraWall.Core;
 
-namespace PerspectiveCameraWall.Sample1
+namespace Example.BuiltInCamera
 {
-    public class SampleCameraManager : MonoBehaviour
+    public class CameraManager : MonoBehaviour
     {
         public Camera mainCamera;
 
@@ -13,14 +13,14 @@ namespace PerspectiveCameraWall.Sample1
 
         public bool useCameraWall = true;
     
-        public static SampleCameraManager Instance { get; private set; }
+        public static CameraManager Instance { get; private set; }
 
         #region Unity Event
         private void Awake()
         {
             Instance = this;
 
-            CameraWall.SetInfo(new SampleCameraInfo());
+            CameraWall.SetInfo(new CameraInfo());
         }
     
         private void Update()

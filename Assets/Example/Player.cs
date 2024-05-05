@@ -1,10 +1,10 @@
 using UnityEngine;
 
-namespace PerspectiveCameraWall.Sample1
+namespace Example.BuiltInCamera
 {
     
     [RequireComponent(typeof(CharacterController))]
-    public class SampleCameraTestPlayer : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         [Range(0.1f, 10f)]
         public float speed = 2.0f;
@@ -21,14 +21,14 @@ namespace PerspectiveCameraWall.Sample1
 
         private void Start()
         {
-            SampleCameraManager.Instance.target = gameObject;
+            CameraManager.Instance.target = gameObject;
         }
 
         private void FixedUpdate()
         {
             Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             Vector3 moveDir = new Vector3(0, -gravity * Time.fixedDeltaTime, 0);
-            Vector3 camAngles = SampleCameraManager.Instance.mainCamera.transform.eulerAngles;
+            Vector3 camAngles = CameraManager.Instance.mainCamera.transform.eulerAngles;
             Quaternion newQuaternion = Quaternion.Euler(new Vector3(0, camAngles.y, camAngles.z));
             Vector3 camDir = newQuaternion * input.normalized;
 
